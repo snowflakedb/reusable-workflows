@@ -1,2 +1,1 @@
-# semgrep-reusable-workflow
-A reusable workflow that will be used by repositories to run semgrep on each PR
+A collection of reusable workflows that can be used internally at Snowflake.
