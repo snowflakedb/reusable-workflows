@@ -1,0 +1,22 @@
+name: A Resuable Semgrep workflow v2
+
+on:
+  workflow_call:
+   secrets:
+     token:
+       required: true  
+ 
+jobs:
+  semgrep:
+    name: Scan
+    runs-on: ubuntu-latest
+    env:
+      SEMGREP_APP_URL: https://semgrep.snowflake.com
+      PUBLISH_DEPLOYMENT: 1
+      SEMGREP_APP_TOKEN: ${{ secrets.token }}
+    container:
+      image: returntocorp/semgrep
+    if: (github.actor != 'dependabot[bot]')
+    steps:
+      - uses: actions/checkout@v3
+      - run: semgrep ci || [ $? != 1 ]  # fails on blocking findings, passes on internal errors
