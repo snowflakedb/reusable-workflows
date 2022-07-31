@@ -6,7 +6,8 @@ on:
      token:
        required: true
 
-permissions: {}
+permissions:
+  contents: read
  
 jobs:
   semgrep:
