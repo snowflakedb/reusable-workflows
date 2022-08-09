@@ -18,7 +18,7 @@ jobs:
       PUBLISH_DEPLOYMENT: 1
       SEMGREP_APP_TOKEN: ${{ secrets.token }}
     container:
-      image: returntocorp/semgrep
+      image: returntocorp/semgrep:stable
     if: (github.actor != 'dependabot[bot]')
     steps:
       - uses: actions/checkout@v3
