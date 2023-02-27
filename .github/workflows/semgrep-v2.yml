@@ -1,4 +1,4 @@
-name: A Resuable Semgrep workflow v2
+name: Reusable workflow for PRs
 
 on:
   workflow_call:
