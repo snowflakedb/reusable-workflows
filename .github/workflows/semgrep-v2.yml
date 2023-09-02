@@ -18,7 +18,7 @@ jobs:
       PUBLISH_DEPLOYMENT: 1
       SEMGREP_APP_TOKEN: ${{ secrets.token }}
     container:
-      image: returntocorp/semgrep:stable
+      image: returntocorp/semgrep:1.38.2
     if: (github.actor != 'dependabot[bot]' && !contains(github.event.pull_request.title, 'PR Canary'))
     steps:
       - uses: actions/checkout@v3
