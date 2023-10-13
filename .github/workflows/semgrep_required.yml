@@ -1,4 +1,4 @@
-name: Semgrep PR workflow
+name: SAST PR Checks
 
 on:
   pull_request:
@@ -9,7 +9,6 @@ permissions:
 
 jobs:
   semgrep:
-    name: Scan
     runs-on: ubuntu-latest
     env:
       SEMGREP_APP_URL: https://snowflake.semgrep.dev
