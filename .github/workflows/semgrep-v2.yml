@@ -12,7 +12,7 @@ permissions:
 jobs:
   semgrep:
     name: Scan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       SEMGREP_APP_URL: https://snowflake.semgrep.dev
       PUBLISH_DEPLOYMENT: 1
