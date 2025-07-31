@@ -2,7 +2,7 @@
 # Section 1
 # This section should only contain the catchall rule
 ##################################################
-*     @sfc-gh-hpathak 
+*     @snowflakedb/ProdSec-Assurance
 
 ##################################################
 # Section 2
