@@ -13,7 +13,13 @@ jobs:
   semgrep:
     name: Scan
     runs-on: ubuntu-22.04
+    env:
+      SEMGREP_APP_URL: https://snowflake.semgrep.dev
+      PUBLISH_DEPLOYMENT: 1
+      SEMGREP_APP_TOKEN: ${{ secrets.token }}
+    container:
+      image: returntocorp/semgrep:latest
+    if: (github.actor != 'dependabot[bot]' && !contains(github.event.pull_request.title, 'PR Canary'))
     steps:
-      - name: "No-op"
-        run: echo "Temporarily disabled due to Docker outage"
-      
+      - uses: actions/checkout@v3
+      - run: semgrep ci
